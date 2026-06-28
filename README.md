@@ -43,3 +43,84 @@ Unlike cloud-based AI applications, this project runs completely offline using a
 | Retrieval | RAG Pipeline |
 
 ---
+## System Architecture
+
+```
+                PDF Research Paper
+                        │
+                        ▼
+               PyMuPDF Text Extraction
+                        │
+                        ▼
+                 Text Chunking
+                        │
+                        ▼
+         Sentence Transformer Embeddings
+                        │
+                        ▼
+             ChromaDB Vector Database
+                        │
+                        ▼
+          Similarity Search (Retriever)
+                        │
+                        ▼
+               Qwen3 Local LLM (Ollama)
+                        │
+                        ▼
+          Summary & Question Answering
+```
+
+---
+
+## Installation
+
+### Clone the repository
+
+```bash
+git clone https://github.com/sandhana5/Research-paper-AI-Assistant.git
+```
+
+Move into the project directory
+
+```bash
+cd Research-paper-AI-Assistant
+```
+
+Create a virtual environment
+
+```bash
+python -m venv venv
+```
+
+Activate the environment
+
+### Windows
+
+```bash
+venv\Scripts\activate
+```
+
+Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+Install Ollama
+
+https://ollama.com/
+
+Download the Qwen3 model
+
+```bash
+ollama pull qwen3:8b
+```
+
+Run the Streamlit application
+
+```bash
+streamlit run app.py
+```
+
+
+---
